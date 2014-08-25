@@ -33,27 +33,6 @@ Then just run the scripts/ for each purpose
 How to use:
 ===========
 
-Reminders
----------
-This is an example:
-
-    [21:30:01] <Thanatermesis> remind me about pizza! in 1 min
-    [21:30:02]        <keyra2> Thanatermesis: don't worry! I will remind you about "pizza!" in 1 min
-    [21:31:01]        <keyra2> Thanatermesis: pizza!
-
-The bot will take care of that for you and will tell you want you need to remember when the time has passed
-You can use a very english language that it should understand it, for example:
-
-    hey john, can you remind me about my pizza is going to burn in 1 hour ?
-
-The 'regex' syntax that you can use is something like:
-
-    /(.*)remind (us|me|#[^ ]*) (?:about|to|that) (.*) (?:(in) ([0-9]+) (min(?:ute(s|)|s)?|hour(?:s)?))/i
-
-Note: the reminders are not saved in any database, if the bot restarts, they will be forgotten
-**WARNING:** This plugin is by default disabled due to a bug, see Issues
-
-
 
 Automatic Reply's
 -----------------
@@ -75,6 +54,41 @@ Interactive commands:
     <keyword>                         # display definition
 
 Note: the database is stored in a plain-text yaml file, which is saved among restarts and ages
+
+Memos to other users
+--------------------
+Simple as this:
+
+    !memo princeamd when you come back tell me about your last features!
+
+And the message will be passed to princeamd the next time he connects back
+
+Scores
+------
+Just a small and funny plugin for motivate the users:
+
+    <thanatermesis> princeamd +1
+            <keyra> princeamd actual score is 69!
+
+Reminders
+---------
+This is an example:
+
+    [21:30:01] <Thanatermesis> remind me about pizza! in 1 min
+    [21:30:02]        <keyra2> Thanatermesis: don't worry! I will remind you about "pizza!" in 1 min
+    [21:31:01]        <keyra2> Thanatermesis: pizza!
+
+The bot will take care of that for you and will tell you want you need to remember when the time has passed
+You can use a very english language that it should understand it, for example:
+
+    hey john, can you remind me about my pizza is going to burn in 1 hour ?
+
+The 'regex' syntax that you can use is something like:
+
+    /(.*)remind (us|me|#[^ ]*) (?:about|to|that) (.*) (?:(in) ([0-9]+) (min(?:ute(s|)|s)?|hour(?:s)?))/i
+
+Note: the reminders are not saved in any database, if the bot restarts, they will be forgotten
+**WARNING:** This plugin is by default disabled due to a bug, see Issues
 
 
 
