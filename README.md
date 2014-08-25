@@ -14,3 +14,17 @@ Features
 - **Reminders**: simple feature that reminds you about something after a given time, it also detects when somebody wants to have a reminder
 
 - **Memo's**: It gives messages to users when they connects back into the channel
+
+- **Scores**: Just a small plugin for give scores to the users
+
+
+How to use
+==========
+
+First you should install the required gems as user:
+
+    gem install --user-install cinch
+
+Then just run the given scripts/ for each purpose
+
+
