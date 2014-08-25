@@ -21,10 +21,13 @@ Features
 How to use
 ==========
 
-First you should install the required gems as user:
+First you should install the required gems as user (recommended):
 
     gem install --user-install cinch
 
-Then just run the given scripts/ for each purpose
+You may optionally install other dependencies too like ruby-yaml
+
+Then just run the scripts/ for each purpose
+
 
 
