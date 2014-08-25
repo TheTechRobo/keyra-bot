@@ -3,7 +3,7 @@ keyra-bot
 
 IRC bot meant to be a useful tool to give FAQs to the users
 
-It is very light, in ruby using the CINCH bot framework
+It is very light (10-15 MB of RAM), in ruby using the CINCH bot framework
 
 Features
 ========
