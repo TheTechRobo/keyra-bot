@@ -19,7 +19,7 @@ bot = Cinch::Bot.new do
         #c.plugins.prefix = "!"
 
         # You can set these details here or in an external file too, which will be not tracked by git
-        account = YAML.load_file '../account.yaml'
+        account = YAML.load_file '../database/account.yaml'
 
         c.server = "irc.freenode.org"
         c.channels = ["#elive-bots"]
