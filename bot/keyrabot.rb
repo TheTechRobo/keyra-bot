@@ -3,15 +3,14 @@ require 'cinch'
 require 'yaml'
 
 # Plugins
-#require_relative "plugins/identify.rb"
+require_relative "plugins/identify.rb"
 require_relative "plugins/yamlscore.rb"
 require_relative "plugins/yamlmemo.rb"
 require_relative "plugins/yamlkeywords.rb"
-#require_relative "plugins/remind.rb"
+require_relative "plugins/remind.rb"
 #require "cinch/plugins/urlscraper"
 
-#Note: not for production
-#require_relative "plugins/plugin_management.rb"
+require_relative "plugins/plugin_management.rb"
 
 
 bot = Cinch::Bot.new do
@@ -33,26 +32,31 @@ bot = Cinch::Bot.new do
         c.realname = account['user']
         c.nick = account['user']
 
-        # if you need to identify with pass your user-bot, see https://github.com/cinchrb/cinch-identify
-        # Note: atm it doesnt seems to call nickserv for identify itself, so lets disable it for now
-        #c.plugins.plugins = [Cinch::Plugins::Identify]
-        #c.plugins.options[Cinch::Plugins::Identify] = {
-            #:username => account['user'],
-            #:password => account['pass'],
-            #:type     => :nickserv,
-        #}
-
-
         #
         # Plugins:
         #
+        c.plugins.plugins = [
+            Cinch::Plugins::Identify,
+            Cinch::Plugins::YamlScore,
+            Cinch::Plugins::YamlMemo,
+            Cinch::Plugins::YamlKeywords,
+            Cinch::Plugins::Remind,
+            Cinch::Plugins::PluginManagement,
+        ]
+
+        # if you need to identify with pass your user-bot, see https://github.com/cinchrb/cinch-identify
+
+
+        c.plugins.options[Cinch::Plugins::Identify] = {
+            :username => account['user'],
+            :password => account['pass'],
+            :type     => :nickserv,
+        }
+
+
         # user, +1
-        c.plugins.plugins = [Cinch::Plugins::YamlScore]
         # The following line is optional, if committed there will be no message.
         #c.plugins.options[Cinch::Plugins::YamlScore] = { warn_no_user_message: "User %s is not in the channel, who do you want to score?" }
-
-        # !memo user message
-        c.plugins.plugins = [Cinch::Plugins::YamlMemo]
 
         #!keywords                         # list all definitions
         #!keyword? <keyword>               # show single definition
@@ -61,19 +65,11 @@ bot = Cinch::Bot.new do
         #!keyword "<keyword>" <definition> # define with spaces
         #!forget   <keyword>               # remove definition
         #<keyword>                         # display definition
-        c.plugins.plugins = [Cinch::Plugins::YamlKeywords]
 
         # just paste an url in the channel
         # note: it uses some amount of RAM, instead of 1.8 % it goes to 4.5 %
         #c.plugins.plugins = [Cinch::Plugins::UrlScraper]
 
-        # Remind plugin: Warning: it bugs, see the source code comments of the plugin
-        #c.plugins.plugins = [Cinch::Plugins::Remind]
-
-        # plugin management plugin, useful for reload the plugin without reconnect the bot
-        # !plugin reload YamlKeywords
-        # Note: do not use it in production, seems like plugins are not loaded until you tell them to load by this plugin, se leave this disable unless you are developing
-        #c.plugins.plugins = [Cinch::Plugins::PluginManagement]
     end
 
 end
