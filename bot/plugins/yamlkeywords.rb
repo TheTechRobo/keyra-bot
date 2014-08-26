@@ -54,13 +54,18 @@ module Cinch
             end
 
             def find_keyword(m)
-                @keywords.keys.map{|keyword|
-                    Regexp.new(keyword).match(m.message)
-                }.compact.sort_by{|matchdata|
-                    matchdata.begin(0)
-                }.each{|matchdata|
-                    m.reply @keywords[matchdata[0]]
-                }
+                @keywords.each do |k,v|
+                    Regexp.new(k, Regexp::IGNORECASE).match(m.message) do |r|
+                        m.reply v
+                    end
+                end
+                # The next code doesn't seems to answer if we have insert a regex, but the previous code does the job, thx graft
+                    #Regexp.new(keyword).match(m.message)
+                #}.compact.sort_by{|matchdata|
+                    #matchdata.begin(0)
+                #}.each{|matchdata|
+                    #m.reply @keywords[matchdata[0]]
+                #}
             end
 
             listen_to :channel
