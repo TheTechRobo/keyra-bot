@@ -66,8 +66,10 @@ module Cinch
 
                         # wait and...
                         sleep delayed_answer
-                        # answer !
-                        m.reply "#{m.user.nick}, " + v
+                        # answer including nick (may be annoying)
+                        #m.reply "#{m.user.nick}, " + v
+                        # answer simple sentences, without hilight user nick
+                        m.reply v
 
                     end
                 end

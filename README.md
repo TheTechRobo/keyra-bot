@@ -76,6 +76,9 @@ Much suggested is to use regex for the matches, so that an user saying **beta in
     # accepts words in any order: "beta installer of elive", "installer beta of elive", "of elive beta installer":
     (?=.*beta)(?=.*installer).*of elive:   the installer of elive is the best one!
 
+    # if you need to add entries wich includes the ":" colon char, make sure to quote it with also !, like:
+    test: ! 'result with a : colon char'
+
 
 Memos to other users
 --------------------
