@@ -20,10 +20,18 @@ bot_start(){
 
 main(){
     # always close it first
-    bot_close
-
-    bot_start
-
+    case "$1" in
+        start)
+            bot_start
+            ;;
+        stop)
+            bot_close
+            ;;
+        *)
+            bot_start
+            bot_close
+            ;;
+    esac
 }
 
 #
