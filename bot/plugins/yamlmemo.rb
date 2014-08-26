@@ -19,7 +19,7 @@ module Cinch
             listen_to :online,             :method => :listen
 
             listen_to :message
-            match /(memo|note|tell) (.+?) (.+)/
+            match /memo (.+?) (.+)/
 
             def listen(m)
                 if @memos.key?(m.user.nick) and @memos[m.user.nick].size > 0
@@ -40,13 +40,13 @@ module Cinch
                 elsif @memos && @memos.key?(nick)
                     msg = make_msg(m.user.nick, m.channel, message, Time.now)
                     @memos[nick] << msg
-                    m.reply "Ok, I'll notify #{nick} when (s)he enters the channel!"
+                    m.reply "Ok, I'll notify #{nick} when I see him/her around!"
                     update_store
                 else
                     @memos[nick] ||= []
                     msg = make_msg(m.user.nick, m.channel, message, Time.now)
                     @memos[nick] << msg
-                    m.reply "Ok, I'll notify #{nick} when (s)he enters the channel!"
+                    m.reply "Ok, I'll notify #{nick} when I see him/her around!"
                     update_store
                 end
             end
