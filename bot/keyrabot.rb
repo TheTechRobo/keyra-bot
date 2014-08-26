@@ -22,7 +22,8 @@ bot = Cinch::Bot.new do
         account = YAML.load_file '../database/account.yaml'
 
         c.server = "irc.freenode.org"
-        c.channels = ["#elive-bots"]
+        #c.channels = ["#elive-bots"]
+        c.channels = ["#elive", "#elive-dev"]
 
         #c.user = "superkeyra2"
         c.user = account['user']
