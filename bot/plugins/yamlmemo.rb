@@ -14,6 +14,10 @@ module Cinch
                 end
             end
 
+            listen_to :connect,            :method => :listen
+            listen_to :join,               :method => :listen
+            listen_to :online,             :method => :listen
+
             listen_to :message
             match /(memo|note|tell) (.+?) (.+)/
 
@@ -21,7 +25,7 @@ module Cinch
                 if @memos.key?(m.user.nick) and @memos[m.user.nick].size > 0
                     while @memos[m.user.nick].size > 0
                         msg = @memos[m.user.nick].shift
-                        m.reply msg
+                        m.reply "#{m.user.nick}, memo for you: " + msg
                     end
                     @memos.delete m.user.nick
                     update_store
@@ -36,13 +40,13 @@ module Cinch
                 elsif @memos && @memos.key?(nick)
                     msg = make_msg(m.user.nick, m.channel, message, Time.now)
                     @memos[nick] << msg
-                    m.reply "Added memo for #{nick}"
+                    m.reply "Ok, I'll notify #{nick} when (s)he enters the channel!"
                     update_store
                 else
                     @memos[nick] ||= []
                     msg = make_msg(m.user.nick, m.channel, message, Time.now)
                     @memos[nick] << msg
-                    m.reply "Added memo for #{nick}"
+                    m.reply "Ok, I'll notify #{nick} when (s)he enters the channel!"
                     update_store
                 end
             end
@@ -56,8 +60,8 @@ module Cinch
             end
 
             def make_msg(nick, channel, text, time)
-                t = time.strftime("%Y-%m-%d")
-                "<#{nick}/#{channel}/#{t}> #{text}"
+                t = time.strftime("%Y-%m-%d %H:%M")
+                "<#{nick}/#{channel}/#{t}>  #{text}"
             end
         end
     end
