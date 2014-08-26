@@ -30,6 +30,13 @@ First you should install the required gems as user (recommended):
 
 You may optionally install other dependencies too like ruby-yaml
 
+Also you need a file in the keyra-bot/database directory with similar contents:
+
+    ---
+    user: keyra
+    pass: SECRET
+    server: irc.freenode.net
+
 Then just run the scripts/ for each purpose
 
 
@@ -40,6 +47,8 @@ How to use:
 Automatic Reply's
 -----------------
 This feature is very simple and doesn't require to call the bot at all, if somebody says a word that is listed on his database, which you can add/modify entries manually editing the file (requires restart) or interactively from the bot channel, the bot will answer what you need to know about.
+
+The database is stored in a plain-text yaml file, which is saved among restarts and ages
 
 Example:
 
@@ -56,7 +65,17 @@ Interactive commands:
     !forget   <keyword>               # remove definition
     <keyword>                         # display definition
 
-Note: the database is stored in a plain-text yaml file, which is saved among restarts and ages
+Much suggested is to use regex for the matches, so that an user saying **beta installer** or **installer beta** would work. There's some examples:
+
+    # will accept "beta installer" or "experimental installer"
+    (beta|experimental) installer:   the new installer is ready!
+
+    # accepts "installer" or "instaler"
+    instal(l?)er:   the installer r00lz!
+
+    # accepts words in any order: "beta installer of elive", "installer beta of elive", "of elive beta installer":
+    (?=.*beta)(?=.*installer).*of elive:   the installer of elive is the best one!
+
 
 Memos to other users
 --------------------
