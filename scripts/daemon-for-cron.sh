@@ -5,9 +5,13 @@ bot_close(){
     killall keyrabot.sh
 
     #kill da bot
-    kill "$( ps aux | grep -v grep | grep "ruby ../keyrabot.rb" | awk '{print $2}' | tail -1 )" 2>/dev/null
-    kill "$( ps aux | grep -v grep | grep "ruby ../keyrabot.rb" | awk '{print $2}' | tail -1 )" 2>/dev/null
-    kill -9 "$( ps aux | grep -v grep | grep "ruby ../keyrabot.rb" | awk '{print $2}' | tail -1 )" 2>/dev/null
+    kill "$( ps aux | grep -v grep | grep "ruby ../bot/keyrabot.rb" | awk '{print $2}' | tail -1 )" 2>/dev/null
+    kill "$( ps aux | grep -v grep | grep "ruby ../bot/keyrabot.rb" | awk '{print $2}' | tail -1 )" 2>/dev/null
+    kill "$( ps aux | grep -v grep | grep "ruby ../bot/keyrabot.rb" | awk '{print $2}' | tail -1 )" 2>/dev/null
+    kill "$( ps aux | grep -v grep | grep "ruby ../bot/keyrabot.rb" | awk '{print $2}' | tail -1 )" 2>/dev/null
+    kill "$( ps aux | grep -v grep | grep "ruby ../bot/keyrabot.rb" | awk '{print $2}' | tail -1 )" 2>/dev/null
+    kill "$( ps aux | grep -v grep | grep "ruby ../bot/keyrabot.rb" | awk '{print $2}' | tail -1 )" 2>/dev/null
+    kill -9 "$( ps aux | grep -v grep | grep "ruby ../bot/keyrabot.rb" | awk '{print $2}' | tail -1 )" 2>/dev/null
 }
 
 bot_start(){
