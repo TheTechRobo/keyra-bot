@@ -6,8 +6,9 @@ require_relative "plugins/yamlscore.rb"
 require_relative "plugins/yamlmemo.rb"
 require_relative "plugins/yamlkeywords.rb"
 #require_relative "plugins/remind.rb"
-#
 #require "cinch/plugins/urlscraper"
+
+require_relative "plugins/plugin_management.rb"
 
 
 bot = Cinch::Bot.new do
@@ -48,6 +49,10 @@ bot = Cinch::Bot.new do
 
         # Remind plugin: Warning: it bugs, see the source code comments of the plugin
         #c.plugins.plugins = [Cinch::Plugins::Remind]
+
+        # plugin management plugin, useful for reload the plugin without reconnect the bot
+        # !plugin reload YamlKeywords
+        c.plugins.plugins = [Cinch::Plugins::PluginManagement]
     end
 
 end

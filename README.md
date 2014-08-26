@@ -18,6 +18,7 @@ Features
 - **Scores**: Just a small plugin for give scores to the users
 
 
+
 Run it!
 =======
 
@@ -90,6 +91,13 @@ The 'regex' syntax that you can use is something like:
 Note: the reminders are not saved in any database, if the bot restarts, they will be forgotten
 **WARNING:** This plugin is by default disabled due to a bug, see Issues
 
+Plugin Management
+-----------------
+You can also unload / load / reload bot plugins with the command:
+
+    !plugin reload YamlKeywords
+
+This is extremely useful for development, if you dont want to restart the bot everytime which is very slow
 
 
 Collaborate

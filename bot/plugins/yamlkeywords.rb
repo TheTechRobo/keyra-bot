@@ -56,7 +56,18 @@ module Cinch
             def find_keyword(m)
                 @keywords.each do |k,v|
                     Regexp.new(k, Regexp::IGNORECASE).match(m.message) do |r|
+                        # give her some humanity
+                        # this is supposed to say: ( words * 60 ) / words-per-minute
+                        delayed_answer = ( ( v.split.size * 60 ) / 200 ).to_f
+                        # add 3 more seconds of humanity
+                        delayed_answer = delayed_answer + 3
+                        #m.reply delayed_answer
+
+                        # wait and...
+                        sleep delayed_answer
+                        # answer !
                         m.reply v
+
                     end
                 end
                 # The next code doesn't seems to answer if we have insert a regex, but the previous code does the job, thx graft
