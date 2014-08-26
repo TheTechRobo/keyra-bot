@@ -83,8 +83,8 @@ module Cinch
             def listen(m)
                 case
                     m.message
-                when /^!keywords/
-                    keywords(m)
+                #when /^!keywords/  # temporally disabled, in order to avoid flooding in the channel
+                    #keywords(m)
                 when /^!keyword '([^']+)' (.+)$/, /^!keyword "([^"]+)" (.+)$/, /^!keyword (\S+) (.+)$/
                     keyword_define(m, $1, $2)
                 when /^!keyword (\S+)$/, /^!keyword\? (.+)$/
