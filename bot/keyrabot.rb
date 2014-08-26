@@ -10,7 +10,8 @@ require_relative "plugins/yamlkeywords.rb"
 #require_relative "plugins/remind.rb"
 #require "cinch/plugins/urlscraper"
 
-require_relative "plugins/plugin_management.rb"
+#Note: not for production
+#require_relative "plugins/plugin_management.rb"
 
 
 bot = Cinch::Bot.new do
@@ -71,7 +72,8 @@ bot = Cinch::Bot.new do
 
         # plugin management plugin, useful for reload the plugin without reconnect the bot
         # !plugin reload YamlKeywords
-        c.plugins.plugins = [Cinch::Plugins::PluginManagement]
+        # Note: do not use it in production, seems like plugins are not loaded until you tell them to load by this plugin, se leave this disable unless you are developing
+        #c.plugins.plugins = [Cinch::Plugins::PluginManagement]
     end
 
 end
