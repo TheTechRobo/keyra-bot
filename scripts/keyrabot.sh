@@ -12,11 +12,11 @@ main(){
         # we need to run it from his directory itself, in order to save files in its databases
         cd "$sources_dir/database"
 
-        # run the bo
-        "$sources_dir/bot/keyrabot.rb"
+        # run the bot
+        "../bot/keyrabot.rb"
 
         # bot died by any unknown reason ? wait a bit and run it again
-        sleep 30
+        sleep 20
     done
 }
 
