@@ -2,7 +2,7 @@
 
 bot_close(){
     # kill the script first
-    killall keyrabot.sh
+    killall keyrabot.sh 2>/dev/null
 
     #kill da bot
     kill "$( ps aux | grep -v grep | grep "ruby ../bot/keyrabot.rb" | awk '{print $2}' | tail -1 )" 2>/dev/null
@@ -28,8 +28,8 @@ main(){
             bot_close
             ;;
         *)
-            bot_start
             bot_close
+            bot_start
             ;;
     esac
 }
