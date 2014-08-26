@@ -59,7 +59,7 @@ module Cinch
                     Regexp.new(k, Regexp::IGNORECASE).match(m.message) do |r|
                         # give her some humanity
                         # this is supposed to say: ( words * 60 ) / words-per-minute
-                        delayed_answer = ( ( v.split.size * 60 ) / 120 ).to_f
+                        delayed_answer = ( ( v.split.size * 60 ) / 140 ).to_f
                         # add 3 more seconds of humanity
                         delayed_answer = delayed_answer + 3
                         #m.reply delayed_answer
@@ -67,7 +67,7 @@ module Cinch
                         # wait and...
                         sleep delayed_answer
                         # answer !
-                        m.reply v
+                        m.reply "#{m.user.nick}, " + v
 
                     end
                 end
