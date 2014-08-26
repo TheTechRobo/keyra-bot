@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 require 'cinch'
+require 'yaml'
 
 # Plugins
+#require_relative "plugins/identify.rb"
 require_relative "plugins/yamlscore.rb"
 require_relative "plugins/yamlmemo.rb"
 require_relative "plugins/yamlkeywords.rb"
@@ -13,15 +15,29 @@ require_relative "plugins/plugin_management.rb"
 
 bot = Cinch::Bot.new do
     configure do |c|
-        c.server = "irc.freenode.org"
-        #c.channels = ["#elive-dev", "#elive"]
-        c.channels = ["#elive-bots"]
         c.ping_interval = 340
         #c.plugins.prefix = "!"
 
-        c.user = "superkeyra2"
-        c.realname = "superkeyra2"
-        c.nick = "superkeyra2"
+        # You can set these details here or in an external file too, which will be not tracked by git
+        account = YAML.load_file '../account.yaml'
+
+        c.server = "irc.freenode.org"
+        c.channels = ["#elive-bots"]
+
+        #c.user = "superkeyra2"
+        c.user = account['user']
+        c.realname = account['user']
+        c.nick = account['user']
+
+        # if you need to identify with pass your user-bot, see https://github.com/cinchrb/cinch-identify
+        # Note: atm it doesnt seems to call nickserv for identify itself, so lets disable it for now
+        #c.plugins.plugins = [Cinch::Plugins::Identify]
+        #c.plugins.options[Cinch::Plugins::Identify] = {
+            #:username => account['user'],
+            #:password => account['pass'],
+            #:type     => :nickserv,
+        #}
+
 
         #
         # Plugins:
