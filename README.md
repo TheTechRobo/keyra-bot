@@ -62,16 +62,13 @@ Memos to other users
 --------------------
 Simple as this:
 
-    !memo princeamd when you come back tell me about your last features!
+    <Thanatermesis> !memo princeamd when you come back tell me about your last features!
+            <keyra> Ok, I'll notify princeamd when (s)he enters the channel!
+                    --> princeamd enters in the channel
+            <keyra> princeamd, memo for you: <Thanatermesis/#elive-dev/2014-08-26 15:49>  when you come back tell me about your last features!
+
 
 And the message will be passed to princeamd the next time he connects back
-
-Scores
-------
-Just a small and funny plugin for motivate the users:
-
-    <thanatermesis> princeamd +1
-            <keyra> princeamd actual score is 69!
 
 Reminders
 ---------
@@ -91,7 +88,13 @@ The 'regex' syntax that you can use is something like:
     /(.*)remind (us|me|#[^ ]*) (?:about|to|that) (.*) (?:(in) ([0-9]+) (min(?:ute(s|)|s)?|hour(?:s)?))/i
 
 Note: the reminders are not saved in any database, if the bot restarts, they will be forgotten
-**WARNING:** This plugin is by default disabled due to a bug, see Issues
+
+Scores
+------
+Just a small and funny plugin for motivate the users:
+
+    <thanatermesis> princeamd +1
+            <keyra> princeamd actual score is 69!
 
 Plugin Management
 -----------------
