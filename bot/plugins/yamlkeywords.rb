@@ -14,15 +14,16 @@ module Cinch
             end
 
             def keywords(m)
-                if
-                    @keywords.size > 0
-                    then
-                    m.reply "Keywords start:"
-                    @keywords.each{|k,v| m.reply "'#{k}': '#{v}'." }
-                    m.reply "Keywords end."
-                else
-                    m.reply "No keywords defined yet."
-                end
+                m.reply "Listing of keywords assigned is disabled to avoid flood, if you want to collaborate by enabling this feature to send the list only in a private message to the user you can check the code at https://github.com/Elive/keyra-bot"
+                #if
+                    #@keywords.size > 0
+                    #then
+                    #m.reply "Keywords start:"
+                    #@keywords.each{|k,v| m.reply "'#{k}': '#{v}'." }
+                    #m.reply "Keywords end."
+                #else
+                    #m.reply "No keywords defined yet."
+                #end
             end
 
             def keyword_define(m, keyword, definition)
@@ -83,8 +84,8 @@ module Cinch
             def listen(m)
                 case
                     m.message
-                #when /^!keywords/  # temporally disabled, in order to avoid flooding in the channel
-                    #keywords(m)
+                when /^!keywords/  # temporally disabled, in order to avoid flooding in the channel
+                    keywords(m)
                 when /^!keyword '([^']+)' (.+)$/, /^!keyword "([^"]+)" (.+)$/, /^!keyword (\S+) (.+)$/
                     keyword_define(m, $1, $2)
                 when /^!keyword (\S+)$/, /^!keyword\? (.+)$/

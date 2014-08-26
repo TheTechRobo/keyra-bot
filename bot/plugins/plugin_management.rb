@@ -13,7 +13,7 @@ module Cinch
           $1 + $2
         }.downcase # we downcase here to also catch the first letter
 
-        file_name = "../plugins/#{mapping}.rb"
+        file_name = "../bot/plugins/#{mapping}.rb"
         unless File.exist?(file_name)
           m.reply "Could not load #{plugin} because #{file_name} does not exist."
           return
