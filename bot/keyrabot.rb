@@ -21,8 +21,10 @@ bot = Cinch::Bot.new do
         # You can set these details here or in an external file too, which will be not tracked by git
         account = YAML.load_file '../database/account.yaml'
 
-        c.server = "irc.freenode.org"
+        #c.server = "irc.freenode.org"
+        c.server = account['server']
         #c.channels = ["#elive-bots"]
+        # anybody knows how to set this on the yaml file ? (list of items
         c.channels = ["#elive", "#elive-dev"]
 
         #c.user = "superkeyra2"
