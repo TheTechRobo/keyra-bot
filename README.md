@@ -1,9 +1,11 @@
-keyra-bot
+Keyra Bot
 =========
 
-IRC bot meant to be a useful tool to give FAQs to the users
+Fast, very light, simply useful IRC bot which is meant to be a helpful tool for the end-user, answering its questions like a real human 
 
 It is very light (10-15 MB of RAM), in ruby using the CINCH bot framework
+
+Its name comes from the old traditional "keyra" bot very known on the Elive channels, originally writed in perl by felix
 
 Features
 ========
