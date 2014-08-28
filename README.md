@@ -1,9 +1,7 @@
 Keyra Bot
 =========
 
-Fast, very light, simply useful IRC bot which is meant to be a helpful tool for the end-user, answering its questions like a real human 
-
-It is very light (10-15 MB of RAM), in ruby using the CINCH bot framework
+Fast, extremely light (7~ mb RAM), ruby (cinch) based, simply useful IRC bot which is meant to be a helpful tool for the end-user, answering its questions like a real human 
 
 Its name comes from the old traditional "keyra" bot very known on the Elive channels, originally writed in perl by felix
 
