@@ -11,6 +11,8 @@ module Cinch
                     then @keywords = YAML.load_file('keywords.yaml')
                 else @keywords = {}
                 end
+
+                @replys = []
             end
 
             def keywords(m)
@@ -69,8 +71,19 @@ module Cinch
                         # answer including nick (may be annoying)
                         #m.reply "#{m.user.nick}, " + v
                         # answer simple sentences, without hilight user nick
-                        m.reply v
 
+                        # say it unless its a registered said reply
+                        unless @replys.include?(v)
+                            m.reply v
+                        end
+
+                        # add the reply to an array list
+                        @replys.push v
+                        # and remove it automatically after a bit of time
+                        Timer(300, shots: 1) {
+                            @replys.delete v
+                            #m.reply "removed answer: " + v
+                        }
                     end
                 end
                 # The next code doesn't seems to answer if we have insert a regex, but the previous code does the job, thx graft
