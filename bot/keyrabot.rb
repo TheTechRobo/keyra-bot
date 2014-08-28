@@ -47,11 +47,13 @@ bot = Cinch::Bot.new do
         # if you need to identify with pass your user-bot, see https://github.com/cinchrb/cinch-identify
 
 
-        c.plugins.options[Cinch::Plugins::Identify] = {
-            :username => account['user'],
-            :password => account['pass'],
-            :type     => :nickserv,
-        }
+        if defined?(account['pass'])
+                    c.plugins.options[Cinch::Plugins::Identify] = {
+                        :username => account['user'],
+                        :password => account['pass'],
+                        :type     => :nickserv,
+                    }
+        end
 
 
         # user, +1
