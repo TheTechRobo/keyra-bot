@@ -20,6 +20,7 @@ module Cinch
 
             listen_to :message
             match /memo (.+?) (.+)/
+            match /note (.+?) (.+)/
 
             def listen(m)
                 if @memos.key?(m.user.nick) and @memos[m.user.nick].size > 0
