@@ -28,7 +28,7 @@ First you should install the required gems as user (recommended):
 
 You may optionally install other dependencies too like ruby-yaml
 
-Also you need a file in the keyra-bot/database directory with similar contents:
+Also you need an *account.yaml* file in the keyra-bot/database directory with similar contents:
 
     ---
     user: keyra
