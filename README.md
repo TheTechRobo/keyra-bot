@@ -77,6 +77,8 @@ Much suggested is to use regex for the matches, so that an user saying **beta in
     # if you need to add entries wich includes the ":" colon char, make sure to quote it with also !, like:
     test: ! 'result with a : colon char'
 
+*Bonus*: It is much more friendly and fast to modify the entries or adding new ones directly in an editor, the database is a plain file and you can edit it manually, after you have finished, you just need to reload the plugin with '!plugin reload YamlKeywords', this is an unique feature that no other bots probably has :)
+
 
 Memos to other users
 --------------------
