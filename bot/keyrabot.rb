@@ -15,7 +15,7 @@ require_relative "plugins/plugin_management.rb"
 
 bot = Cinch::Bot.new do
     configure do |c|
-        c.ping_interval = 340
+        c.ping_interval = 240
         #c.plugins.prefix = "!"
 
         # You can set these details here or in an external file too, which will be not tracked by git
