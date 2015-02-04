@@ -8,6 +8,7 @@ require_relative "plugins/yamlscore.rb"
 require_relative "plugins/yamlmemo.rb"
 require_relative "plugins/yamlkeywords.rb"
 require_relative "plugins/remind.rb"
+require_relative "plugins/welcome.rb"
 #require "cinch/plugins/urlscraper"
 
 require_relative "plugins/plugin_management.rb"
@@ -41,6 +42,7 @@ bot = Cinch::Bot.new do
             Cinch::Plugins::YamlMemo,
             Cinch::Plugins::YamlKeywords,
             Cinch::Plugins::Remind,
+            Cinch::Plugins::Welcome,
             Cinch::Plugins::PluginManagement,
         ]
 
