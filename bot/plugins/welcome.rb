@@ -16,7 +16,7 @@ module Cinch
           sleep 5
 
           # Reply !
-          m.reply "welcome #{m.user.nick} :)"
+          m.reply "welcome #{m.user.nick} =)"
 
         end
       end
