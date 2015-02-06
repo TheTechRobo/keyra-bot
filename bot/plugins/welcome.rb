@@ -11,7 +11,7 @@ module Cinch
 
       def listen(m)
         # don't welcome keyra herself
-        if m.user.nick !=  bot.nick
+        if m.user.nick != bot.nick && m.user.nick !~ /(ThanaRepo|EliveCode|Thanatermesis|PrinceAMD)/
           # give some humanity:
           sleep 5
 
