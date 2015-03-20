@@ -15,10 +15,10 @@ module Cinch
           # give some humanity:
           sleep 5
 
-          if m.user.nick != bot.nick && m.user.nick !~ /(EliveWeb)/
+          if m.user.nick != bot.nick && m.user.nick =~ /(EliveWeb)/
             m.reply "welcome #{m.user.nick}! If you have any problem running Elive please report it to http://bugs.elivecd.org so we can assist and having you notified about it easier. You can also talk to Prince-AMD or Thanaterme-sis users"
           else
-            if m.user.nick != bot.nick && m.user.nick !~ /(Elive_user)/
+            if m.user.nick != bot.nick && m.user.nick =~ /(Elive_user)/
               m.reply "welcome to Elive #{m.user.nick}! =)"
             else
               # Reply !
