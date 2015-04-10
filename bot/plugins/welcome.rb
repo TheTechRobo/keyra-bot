@@ -20,6 +20,8 @@ module Cinch
           else
             if m.user.nick != bot.nick && m.user.nick =~ /(Elive_user)/
               m.reply "welcome to Elive, #{m.user.nick}! =)"
+              sleep 8
+              m.reply "if you want to leave us a report about Elive leave us your email too so we can contact you in case we need more details!"
             else
               # Reply !
               m.reply "welcome #{m.user.nick} =)"
