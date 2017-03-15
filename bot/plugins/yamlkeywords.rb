@@ -60,9 +60,10 @@ module Cinch
                 @keywords.each do |k,v|
                     Regexp.new(k, Regexp::IGNORECASE).match(m.message) do |r|
                         # give her some humanity
-                        # this is supposed to say: ( words * 60 ) / words-per-minute
+                        # this is supposed to say: ( words * 60 ) / words-per-minute, bigger is the last number and less is the wait: ((50 * 60) / 140) = 21; ((50 * 60) / 180 = 16
                         #delayed_answer = ( ( v.split.size * 60 ) / 140 ).to_f
-                        delayed_answer = ( ( v.split.size * 60 ) / 180 ).to_f
+                        #delayed_answer = ( ( v.split.size * 60 ) / 180 ).to_f
+                        delayed_answer = ( ( v.split.size * 60 ) / 250 ).to_f
                         # add 2 more seconds of humanity
                         delayed_answer = delayed_answer + 2
                         #m.reply delayed_answer
