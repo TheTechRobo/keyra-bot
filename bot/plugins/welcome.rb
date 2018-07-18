@@ -13,31 +13,35 @@ module Cinch
         # don't welcome keyra herself
         if m.user.nick != bot.nick && m.user.nick !~ /(ThanaRepo|EliveCode|Thanatermesis|PrinceAMD)/
           # give some humanity:
-          sleep 5
 
           if m.user.nick != bot.nick && m.user.nick =~ /(EliveWeb)/
             if m.user.online
-              m.reply "welcome #{m.user.nick}! If you have any problem with Elive just talk to Thanatermesi if is here or report it to http://bugs.elivecd.org to better assist and having you notified about it easier."
+              #sleep 2
+              m.reply "welcome #{m.user.nick}! Ask your question! Have you see the new amazing forums too? http://forum.elivelinux.org , the are gorgeous! =)"
             end
           else
 
             if m.user.nick != bot.nick && m.user.nick =~ /(Elive_user)/
+              sleep 2
               if m.user.online
                 m.reply "welcome to Elive, #{m.user.nick}! =)"
               end
-              sleep 8
+
+              sleep 6
               if m.user.online
-                m.reply "how is your experience with Elive so far? any suggestion or issue to report us so we can make it better? for a direct assistance just talk to Thanatermesi or use http://bugs.elivecd.org , your feedbacks is important for improve Elive and your reports are for the correct work for everybody!"
+                m.reply "how is your experience with Elive so far? any suggestion or issue to report us? your feedbacks are important for improve Elive for everybody! try also the new amazing forums! https://forum.elivelinux.org"
               end
+
             else
 
               if m.user.nick != bot.nick && m.user.nick =~ /(Elive_inst)/
+                sleep 2
                 if m.user.online
-                  m.reply "welcome to the Elive world, #{m.user.nick}! =) we hope you enjoy this system"
+                  m.reply "welcome to the Elive world, #{m.user.nick}! =) I hope you are enjoying the system!"
                 end
-                sleep 8
+                sleep 6
                 if m.user.online
-                  m.reply "if you have any suggestion or issue to report just tell us, so we can make even better this system for everybody! you can also use http://bugs.elivecd.org  Oh btw! press control-s to set your real nickname :)"
+                  m.reply "You can find the amazing Elive community on this new BETA Forum website! https://forum.elivelinux.org , BTW press control-s to set your nickname here :)"
                 end
               end
             end
